@@ -1,7 +1,8 @@
 name: Backmerge to Develop
 
 on:
-  push:
+  pull_request:
+    types: [merged]
     branches:
       - master
 
