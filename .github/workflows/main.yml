@@ -1,7 +1,8 @@
 name: Backmerge to Develop
 
 on:
-  push:
+  pull_request:
+    types: [merged]
     branches:
       - master
 
@@ -12,8 +13,6 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 0  # Fetch all history for all branches
 
     - name: Configure Git
       run: |
@@ -22,6 +21,6 @@ jobs:
 
     - name: Backmerge to Develop
       run: |
-        git checkout develop
+        git checkout develope
         git merge master --no-ff
         git push origin develop
