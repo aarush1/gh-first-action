@@ -24,4 +24,4 @@ jobs:
       run: |
         git checkout develope
         git merge master --no-ff
-        git push origin develop
+        git push origin develope
